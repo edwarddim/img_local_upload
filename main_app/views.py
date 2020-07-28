@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Post
+##### NEW IMPORT #######
 import uuid
+########################
 
 # Create your views here.
 def index(request):

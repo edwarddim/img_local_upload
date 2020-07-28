@@ -27,6 +27,8 @@ urlpatterns = [
     path("", include("main_app.urls")),
 ]
 
-# routes to serve up media and static files, do something else in production
+######## SETTINGS FOR FILE UPLOAD ########
+###############################################################################################
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+###############################################################################################
