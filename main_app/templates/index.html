@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <form action="/create_file" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="text" name="subject" id="">
+        </p>
+        <input type="file" name="image" id="">
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        {% for post in all_posts %}
+        <img src="{{MEDIA_URL}}{{post.image}}" alt="img">
+        <p>{{post.file_name}}</p>
+        <p>{{MEDIA_URL}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
